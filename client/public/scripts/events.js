@@ -11,6 +11,7 @@ const renderEvents = async () => {
 
             const topDiv = document.createElement('div')
             topDiv.className = 'top-container'
+            topDiv.style.backgroundImage = `url('${concert.image}')`
 
             const bottomDiv = document.createElement('div')
             bottomDiv.className = 'bottom-container'

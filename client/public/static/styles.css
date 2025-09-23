@@ -1,55 +1,81 @@
+/* Shared header and events list styles (home page) */
 :root {
     background-color: white;
     font-family: Avenir, Helvetica, sans-serif;
     color: black;
 }
 
-/* Header CSS */
-.header-container {
+
+
+/* Events list (home) */
+main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    padding: 24px;
+}
+
+.card {
+    width: 300px;
+    background: #ffffff;
+    border: 3px solid rgb(3, 7, 89);
+    border-radius: 12px;
+    box-shadow: 0 8px 18px rgba(3, 7, 89, 0.06);
     overflow: hidden;
-    padding: 20px 10px;
-    padding-bottom: 60px;
-  }
-
-.header-left {
-    float: left;
-    height: 100px;
-    width: 310px;
+    display: flex;
+    flex-direction: column;
+    min-height: 360px;
 }
 
-.header-left img {
-    padding-top: 8px;
-    height: 80px;
+.card img {
+    width: 100%;
+    display: block;
 }
 
-.header-left h1 {
-    float: right;
-    font-size: 45px;
-    
+.top-container {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 220px;
 }
 
-.header-right {
-    float: right;
-    padding-top:30px;
-    padding-right:10px;
+.bottom-container {
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1 1 auto;
 }
 
-.header-right button {
-  background-color: white;
-  border: solid;
-  border-width: 3px;
-  border-color: rgb(3, 7, 89);
-  border-radius: 0.1rem;
-  border-radius: 16px;
-  box-sizing: border-box;
-  color:  rgb(3, 7, 89);
-  cursor: pointer;
-  padding: 15px 16px;
-  text-align: center;
-  text-transform: uppercase;
-  touch-action: manipulation;
-  width: 80px;
+.bottom-container h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #0a0a0a;
 }
+
+.bottom-container p {
+    margin: 0;
+    color: #444;
+    font-size: 0.95rem;
+}
+
+.bottom-container a{
+    color: rgb(228, 16, 133);
+    text-decoration: none;
+    font-weight: 600;
+    align-self: flex-start;
+}
+
+.bottom-container a:hover{ text-decoration: underline }
+:root {
+    background-color: white;
+    font-family: Avenir, Helvetica, sans-serif;
+    color: black;
+}
+
+
 
 /* Home page CSS */
 
@@ -197,3 +223,44 @@ main {
 .gift-details {
     width: 45vw;
 }
+
+/* Event detail layout used by `client/public/scripts/event.js` */
+.event-container {
+    max-width: 1100px;
+    margin: 36px auto;
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+    padding: 0 16px;
+}
+
+.event-container .top-div,
+.event-container .topDiv {
+    width: 40%;
+    min-height: 320px;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.event-container .bottom-div,
+.event-container .bottomDiv {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 8px 12px;
+}
+
+.event-container h2 {
+    margin: 0 0 8px 0;
+    font-size: 1.6rem;
+}
+
+.event-container p {
+    margin: 0;
+    color: #333;
+    line-height: 1.4;
+}
+

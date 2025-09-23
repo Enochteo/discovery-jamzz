@@ -14,18 +14,25 @@ const renderEvent = async () => {
         eventDiv.className = 'event-container'
 
         const topContainer = document.createElement('div')
-        topContainer.className = 'top-div'
+        topContainer.className = 'top-container'
+        topContainer.style.backgroundImage = `url('${event.image}')`
 
         const bottomContainer = document.createElement('div')
-        bottomContainer.className = 'bottom-div'
+        bottomContainer.className = 'bottom-container'
 
         const eventTitle = document.createElement('h2')
         eventTitle.textContent = `${event.name}`
 
         const artistNames = document.createElement('p')
         artistNames.textContent = event.artists.join(', ')
-        topContainer.appendChild(eventTitle)
+        
+        const venue = document.createElement('p')
+        venue.textContent = event.venue
+
+        bottomContainer.appendChild(eventTitle)
         bottomContainer.appendChild(artistNames)
+        bottomContainer.appendChild(venue)
+
         eventDiv.appendChild(topContainer)
         eventDiv.appendChild(bottomContainer)
         eventContent.appendChild(eventDiv)
