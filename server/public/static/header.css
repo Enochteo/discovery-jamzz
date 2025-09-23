@@ -1,0 +1,80 @@
+/* Header CSS */
+.header-container {
+    overflow: hidden;
+    padding: 20px 10px;
+    padding-bottom: 60px;
+}
+
+.header-left {
+    float: left;
+    height: 100px;
+    width: 310px;
+}
+
+.header-left img {
+    padding-top: 8px;
+    height: 80px;
+}
+
+.header-left h1 {
+    float: right;
+    font-size: 45px;
+}
+
+.header-right {
+    float: right;
+    padding-top:30px;
+    padding-right:10px;
+}
+
+.header-right button,
+.header-right home {
+  background-color: white;
+  border: solid;
+  border-width: 3px;
+  border-color: rgb(3, 7, 89);
+  border-radius: 16px;
+  box-sizing: border-box;
+  color:  rgb(3, 7, 89);
+  cursor: pointer;
+  padding: 12px 14px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  font-weight: 700;
+}
+
+.header-right button:hover,
+.header-right home:hover{
+    background-color: rgb(3,7,89);
+    color: #fff;
+}
+
+/* Make header Home control behave like a button even if the element is an unknown <home> tag */
+.header-right button,
+.header-right home {
+    cursor: pointer;
+    display: inline-block;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    caret-color: transparent; /* hide caret if element somehow becomes focusable text */
+    outline: none;
+    border: 3px solid rgb(3, 7, 89);
+    background: white;
+    color: rgb(3, 7, 89);
+    padding: 12px 14px;
+    border-radius: 12px;
+    font-weight: 700;
+}
+
+.header-right button:focus,
+.header-right home:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(3,7,89,0.12);
+}
+
+/* If the custom <home> element is used, ensure it is rendered inline-block and looks like a button */
+home {
+    display: inline-block;
+}
