@@ -11,12 +11,13 @@ const renderEvents = async () => {
 
             const topDiv = document.createElement('div')
             topDiv.className = 'top-container'
-            topDiv.style.backgroundImage = `url('${concert.image}')`
+            //topDiv.style.backgroundImage = `url('${concert.image}')`
 
             const bottomDiv = document.createElement('div')
             bottomDiv.className = 'bottom-container'
 
-            topDiv.style.backgroundImage = '../safari.png'
+            //topDiv.style.backgroundImage = '../safari.png'
+            topDiv.style.backgroundImage = `url('${concert.image || "../safari.png"}')`
 
             const eventName = document.createElement('h3')
             eventName.textContent = concert.name
@@ -33,7 +34,7 @@ const renderEvents = async () => {
             const eventDetails = document.createElement('a')
             eventDetails.textContent = 'Find More about this Concert >'
             eventDetails.href = `/events/${concert.id}`
-            eventDetails.setAttribute = ('role', 'button')
+            eventDetails.setAttribute('role', 'button')
             bottomDiv.appendChild(eventDetails)
 
             eventDiv.appendChild(topDiv)
@@ -44,10 +45,16 @@ const renderEvents = async () => {
         })
     }
     else {
-        const message = document.createElement(h1)
+        const message = document.createElement('h1')
         message.textContent = 'No Events Available at this time😞'
         mainContent.appendChild(message)
     }
 }
 
-renderEvents()
+const currentPath = window.location.pathname
+
+if (currentPath === '/' || currentPath === '/index.html') {
+    renderEvents()
+} else if (!currentPath.startsWith('/events')) {
+    window.location.href = '/public/static/404.html'
+}
