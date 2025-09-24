@@ -16,4 +16,5 @@ router.get('/:eventId', (req, res) => {
     res.status(200).sendFile(path.resolve(__dirname, '../public/static/event.html'))
 })
 
+
 export default router
